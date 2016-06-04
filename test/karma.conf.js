@@ -18,7 +18,20 @@ module.exports = function(config){
 
     plugins: [
       'karma-chrome-launcher',
-      'karma-jasmine'
-    ]
+      'karma-jasmine',
+      'karma-spec-reporter'
+    ],
+
+    reporters: ["spec"],
+
+    specReporter: {
+      maxLogLines: 5,
+      suppressErrorSummary: true,
+      suppressFailed: false,
+      suppressPassed: false,
+      suppressSkipped: true,
+      showSpecTiming: false
+    }
+
   });
 };
