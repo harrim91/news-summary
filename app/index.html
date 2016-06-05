@@ -3,15 +3,28 @@
 <html lang="en" ng-app="newsSummaryApp">
   <head>
     <meta charset="utf-8">
+    <title>News Summary</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500,300,700,400" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="assets/css/app.css" />
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
-    <title>News Summary</title>
+    <script src="js/factories/ArticleFactory.js"></script>
+    <script src="js/services/ArticleService.js"></script>
+
   </head>
 
   <body>
-    <div ng-controller="NewsSummaryController as controller">
-      <p>{{controller.greeting}}</p>
+    <div ng-include="'partials/_header.html'"></div>
+
+    <div class-"main" ng-controller="NewsSummaryController as ctrl">
+      <div class="container">
+        <div ng-include="'partials/_headlines.html'"></div>
+      </div>
     </div>
+
   </body>
 </html>

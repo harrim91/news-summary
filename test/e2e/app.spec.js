@@ -1,6 +1,13 @@
-describe("app", function() {
-  it("should get home page title", function() {
+describe('app', function() {
+  beforeEach(function() {
     browser.get('/');
-    expect(browser.getTitle()).toEqual("News Summary");
+  });
+
+  it('should get home page title', function() {
+    expect(browser.getTitle()).toEqual('News Summary');
+  });
+
+  it('should have a heading', function() {
+    expect($$('.header h1').getText()).toMatch('News');
   });
 });

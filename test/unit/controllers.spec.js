@@ -1,13 +1,19 @@
-describe("NewsSummaryController", function() {
+describe('NewsSummaryController', function() {
   var controller;
 
-  beforeEach(module("newsSummaryApp"));
+  beforeEach(module('newsSummaryApp'));
 
   beforeEach(inject(function($controller) {
-    controller = $controller("NewsSummaryController");
+    controller = $controller('NewsSummaryController');
   }));
 
-  it("makes exposes a greeting of 'Hello, world'", function() {
-    expect(controller.greeting).toEqual("Hello, world");
+  it('is initialized with zero articles', function() {
+    expect(controller.articles.length).toEqual(0);
+  })
+
+  it('gets ten articles from an api', function() {
+    setTimeout(function() {
+      expect(controller.articles.length).toEqual(10);
+    }, 5000);
   });
 });
