@@ -9,6 +9,7 @@ body {
   padding: 15px;
   border-bottom: 1px solid #000;
   background-color: #8AC9DE;
+  margin-bottom: 20px;
 }
 
 .header h1 {
@@ -23,9 +24,10 @@ body {
 .thumbnail {
   border: 0px;
   position: relative;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 0;
-  margin-bottom:50px;
+  margin-bottom:5px;
+  margin-top: 5px;
 }
 
 .thumbnail img {
@@ -41,4 +43,5 @@ body {
   font-size: 18px;
   font-weight: 800;
   height: 60px;
+  vertical-align: bottom;
 }
