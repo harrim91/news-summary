@@ -5,10 +5,11 @@ angular.module("newsSummaryApp")
     var newsSummaryApiUrl = 'http://news-summary-api.herokuapp.com/'
     var guardianApiRequestUrl = 'http://content.guardianapis.com/search?show-fields=thumbnail,headline,trailText&type=article&page-size=12&section=politics'
 
-    self.setArticles = function() {
-      self.articles = ArticleService.getArticlesData(newsSummaryApiUrl, 'guardian', guardianApiRequestUrl);
+    var setArticles = function() {
+      self.articles = ArticleService.getArticlesData(
+        newsSummaryApiUrl, 'guardian', guardianApiRequestUrl);
     }
 
-    self.setArticles();
+    setArticles();
 
   }]);
