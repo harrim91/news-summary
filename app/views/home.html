@@ -1,6 +1,6 @@
-<div ng-repeat="article in ctrl.articles" class="articles col-xs-12 col-sm-6 col-md-4">
+<div ng-repeat="article in ctrl.articles" ng-click="ctrl.setCurrentArticle($index)" class="articles col-xs-12 col-sm-6 col-md-4">
   <div class="article thumbnail">
-    <a href="#/summary/{{ $index }}">
+    <a ng-href="#/summary/{{ $index }}">
       <h4 class="headline">{{ article.headline }}</h4>
       <img ng-src="{{ article.thumbnail }}" />
     </a>
