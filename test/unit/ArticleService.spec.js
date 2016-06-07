@@ -4,15 +4,13 @@ describe('ArticleService', function() {
   var ArticleService, httpBackend;
 
   var guardianResponseData = {
-    data: {
-      response: {
-        results: [{
-          fields: {
-            headline: "Poll gives Brexit campaign three percentage points lead",
-            thumbnail: "https://media.guim.co.uk/ffd24d7a177d54266c42f075427d37b35ee958f6/0_141_2800_1680/500.jpg"
-          }
-        }]
-      }
+    response: {
+      results: [{
+        fields: {
+          headline: "Poll gives Brexit campaign three percentage points lead",
+          thumbnail: "https://media.guim.co.uk/ffd24d7a177d54266c42f075427d37b35ee958f6/0_141_2800_1680/500.jpg"
+        }
+      }]
     }
   }
 
@@ -26,8 +24,11 @@ describe('ArticleService', function() {
 
     httpBackend.expectGET('http://www.test.com/service?apiRequestUrl=params').respond(guardianResponseData);
 
-    expect(ArticleService.getArticlesData('http://www.test.com', 'service', 'params')).toEqual([new ArticleFactory('Poll gives Brexit campaign three percentage points lead', 'https://media.guim.co.uk/ffd24d7a177d54266c42f075427d37b35ee958f6/0_141_2800_1680/500.jpg')]);
+    var expectedReturnValue = new ArticleFactory('Poll gives Brexit campaign three percentage points lead', 'https://media.guim.co.uk/ffd24d7a177d54266c42f075427d37b35ee958f6/0_141_2800_1680/500.jpg');
 
+    var returnValue = ArticleService.getArticlesData('http://www.test.com/', 'service', 'params');
     httpBackend.flush();
+    expect(returnValue).toEqual([expectedReturnValue]);
+
   });
 });
